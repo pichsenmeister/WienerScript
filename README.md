@@ -35,6 +35,12 @@ WienerScript requires [Node.js and npm](https://nodejs.org/en/).
 npm install -g wienerscript
 ```
 
+or
+
+```
+yarn add global wienerscript
+```
+
 Usage:
 
 ```

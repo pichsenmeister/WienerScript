@@ -86,7 +86,7 @@ Input files conventionally use the `.ws` extension and output files conventional
 | KANNST DA VUASTÖHN | === |
 | DES GEHT SI SCHO AUS | == |
 | && | && |
-| GHUPFT WIE GHATSCHT | || |
+| GHUPFT WIE GHATSCHT | \|\| |
 | WENNST MANST | = |
 | AUFI | + |
 | OWI | - |

@@ -1,6 +1,6 @@
-WienerScript
-==============
+# WienerScript
 
+```
 HACKL AMOI WOS calc(operator, left, right) {
     WOS IS MIT DIR (operator) {
         I SCHAU NUR '+':
@@ -21,13 +21,13 @@ SCHAU MA MOL {
 } LECK OASCH (err) {
     GSCHISSN GRISSN ('invalid operation')
 }
+```
 
 WienerScript adds syntactic sugar to JavaScript that makes it less forgiving, more emotional, and even painful to write, allowing you to do less with more code. 
 
 Common Viennese phrases and words act as intuitive replacements for common JavaScript keywords, operators, and more. You can continue to use raw JavaScript inside WienerScript, and the `wienerscript` transpiler will convert WienerScript code into raw JavaScript.
 
-Installation
-----------------
+### Installation
 
 WienerScript requires [Node.js and npm](https://nodejs.org/en/).
 
@@ -44,34 +44,8 @@ wienerscript
 All files in that directory (and any subdirectories) that have a valid WienerScript file extensions (`.ws`) will be replaced by the transpiled contents of in the `/dist` directory.
 Input files conventionally use the `.ws` extension and output files conventionally use the `.js` extension.s
 
-Example Program
-----------------
 
-An implementation of [FizzBuzz](http://c2.com/cgi/wiki?FizzBuzzTest) using a mix of ArnoldJS syntax and raw JavaScript:
-
-    LET'S KICK SOME ICE
-    GIVE THESE PEOPLE AIR
-        YOU SET US UP n STICK AROUND 1;
-        n <= 100;
-        n STICK AROUND n GET UP 1
-    ENOUGH TALK
-    IT'S SHOWTIME
-    YOU SET US UP out STICK AROUND ;
-    BECAUSE I'M GOING TO SAY PLEASE
-        (I LIED (n I LET HIM GO 3))
-        out STICK AROUND out GET UP Fizz;
-    BECAUSE I'M GOING TO SAY PLEASE
-        (I LIED (n I LET HIM GO 5))
-        out STICK AROUND out GET UP Buzz;
-    TALK TO THE HAND (out
-        WHAT'S WRONG WITH YOUR EYES out
-        I NOW KNOW WHY YOU CRY n);
-    HASTA LA VISTA BABY
-
-This program can be found in `samples/fizzbuzz.ajs`. Its transpiled version can be found in `samples/fizzbuzz.js`.
-Additional examples can be found in the `samples` directory.
-
-Usage
+### Usage
 
 | WienerScript | JavaScript |
 | ----- | ----- |

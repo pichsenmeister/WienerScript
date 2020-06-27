@@ -42,7 +42,9 @@ wienerscript
 ```    
 
 All files in that directory (and any subdirectories) that have a valid WienerScript file extensions (`.ws`) will be replaced by the transpiled contents of in the `/dist` directory.
-Input files conventionally use the `.ws` extension and output files conventionally use the `.js` extension.s
+Input files conventionally use the `.ws` extension and output files conventionally use the `.js` extension.
+
+Examples can be found in the [examples](examples) directory.
 
 
 ### Usage
@@ -58,7 +60,7 @@ Input files conventionally use the `.ws` extension and output files conventional
 | DRAH DI HAM | return |
 | WAS WÜSTN | if |
 | WOA NUA A SCHMÄH | else if |
-| AH SCHO WUASCHT | else |
+| A SCHO WUASCHT | else |
 | for | for |
 | DAMMA WOS | do |
 | GEMMA | while |
@@ -96,3 +98,9 @@ Input files conventionally use the `.ws` extension and output files conventional
 | JO EH | ! |
 | HOST MI | ? |
 | DANN HOIT NET | : |
+
+## License
+This project is licensed under the MIT license, Copyright (c) 2020 David Pichsenmeister | pichsenmeister.com. For more information see [LICENSE](LICENSE).
+
+
+Inspired by [ArnoldJS](https://github.com/pichsenmeister/ArnoldJS)

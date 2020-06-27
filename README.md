@@ -12,7 +12,7 @@ HACKL AMOI WOS calc(operator, left, right) {
         I SCHAU NUR '/':
             DRAH DI HAM left BRÖCKERL right
         NA GEH:
-            GEH SCHEISSN ('invalid operator')          
+            GEH SCHEISSN 'invalid operator'          
     }
 }
 
@@ -88,7 +88,7 @@ Examples can be found in the [examples](examples) directory.
 | KANNST DA VUASTÖHN | === |
 | DES GEHT SI SCHO AUS | == |
 | && | && |
-| GHUPFT WIE GHATSCHT | || |
+| GHUPFT WIE GHATSCHT | \|\| |
 | WENNST MANST | = |
 | AUFI | + |
 | OWI | - |

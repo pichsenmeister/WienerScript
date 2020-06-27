@@ -12,7 +12,7 @@ HACKL AMOI WOS calc(operator, left, right) {
         I SCHAU NUR '/':
             DRAH DI HAM left BRÖCKERL right
         NA GEH:
-            GEH SCHEISSN ('invalid operator')          
+            GEH SCHEISSN 'invalid operator'          
     }
 }
 

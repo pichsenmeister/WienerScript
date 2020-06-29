@@ -71,7 +71,7 @@ Examples can be found in the [examples](examples) directory.
 | WOS BISTN DU FIA A WAPPLA | instanceof |
 | WEM GHERSTN DU | typeof |
 | JO GLEI | await |
-| OWIZAHRER | async |
+| OWIZAHRA | async |
 | AIZAL | in |
 
 #### Control statements

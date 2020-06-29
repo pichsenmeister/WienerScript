@@ -106,7 +106,7 @@ Examples can be found in the [examples](examples) directory.
 | WENNST MANST | = |
 | ANS AUFI | ++ |
 | AUFI | + |
-| ANS OWI | ++ |
+| ANS OWI | -- |
 | OWI | - |
 | HAUTS EICH ZAM | * |
 | BRÖCKERL | / |

@@ -17,7 +17,7 @@ HACKL AMOI WOS merge(
     OIDA leftIndex WENNST MANST 0;
     OIDA rightIndex WENNST MANST 0;
 
-    GEMMA (leftIndex < left.length && rightIndex < right.length) {
+    GEMMA (leftIndex < left.length UND ÜBRIGENS rightIndex < right.length) {
         WOS WÜSTN (left[leftIndex] < right[rightIndex]) {
             result.push(left[leftIndex++]);
         } A SCHO WUASCHT {

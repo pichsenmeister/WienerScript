@@ -104,11 +104,17 @@ Examples can be found in the [examples](examples) directory.
 | UND ÜBRIGENS | && |
 | GHUPFT WIE GHATSCHT | \|\| |
 | WENNST MANST | = |
+| ANS AUFI | ++ |
 | AUFI | + |
+| ANS OWI | ++ |
 | OWI | - |
 | HAUTS EICH ZAM | * |
 | BRÖCKERL | / |
 | S'RESTL | % |
+| WENGA | < |
+| GRESSA | > |
+| | <= |
+| | >= |
 | JO EH | ! |
 | HOST MI | ? |
 | DANN HOIT NET | : |

@@ -1,7 +1,7 @@
 {
 	"name": "wienerscript",
 	"version": "1.0.0",
-	"description": "",
+	"description": "WienerScript adds syntactic WIENERISCH to JavaScript that makes it less forgiving, more emotional, and even painful to write, allowing you to do less with more code.",
 	"main": "./index.js",
 	"bin": {
 		"wienerscript": "./index.js"

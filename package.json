@@ -10,8 +10,13 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node index.js"
 	},
-	"author": "David Pichsenmeister",
-	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pichsenmeister/wienerscript.git"
+	},
+	"author": "David Pichsenmeister <opensource@pichsenmeister.com>",
+	"homepage": "https://github.com/pichsenmeister/wienerscript",
+	"license": "MIT",
 	"dependencies": {
 		"glob": "^7.1.6",
 		"mkdirp": "^1.0.4",

@@ -130,7 +130,7 @@ Examples can be found in the [examples](examples) directory.
 | DES IS MA ECHT Z'DEPPAT | process.exit |
 
 ## License
-This project is licensed under the MIT license, Copyright (c) 2020 David Pichsenmeister | pichsenmeister.com. For more information see [LICENSE](LICENSE).
+This project is licensed under the MIT license, Copyright (c) 2020 David Pichsenmeister | [pichsenmeister.com](https://pichsenmeister.com). For more information see [LICENSE](LICENSE).
 
 
-Inspired by [ArnoldJS](https://github.com/pichsenmeister/ArnoldJS)
+Made by [@pichsenmeister](https://twitter.com/pichsenmeister). Inspired by [ArnoldJS](https://github.com/pichsenmeister/ArnoldJS). 

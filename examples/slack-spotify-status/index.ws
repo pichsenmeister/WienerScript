@@ -25,7 +25,7 @@ express.get("/ping", OWIZAHRA HACKL AMOI WOS (req, res) {
         FIX OIDA song WENNST MANST {
             name: spotifyInfo.item.name,
             artists: spotifyInfo.item.artists
-                .map(artist => artist.name)
+                .map(artist HUACH ZUA artist.name)
                 .join(" & ")
         };
 

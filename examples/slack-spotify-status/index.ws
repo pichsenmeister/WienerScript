@@ -21,7 +21,7 @@ express.get("/ping", OWIZAHRER HACKL AMOI WOS (req, res) {
     I MAN JA NUR ("<3");
     FIX OIDA spotifyInfo WENNST MANST JO GLEI getSpotifyStatus();
 
-    if (spotifyInfo.is_playing) {
+    WOS WÜSTN (spotifyInfo.is_playing) {
         FIX OIDA song WENNST MANST {
             name: spotifyInfo.item.name,
             artists: spotifyInfo.item.artists
@@ -32,10 +32,10 @@ express.get("/ping", OWIZAHRER HACKL AMOI WOS (req, res) {
         JO GLEI setStatus(song, EMOJI);
 
         DRAH DI HAM song;
-    } else {
+    } A SCHO WUASCHT {
         FIX OIDA status WENNST MANST JO GLEI getSlackStatus();
         // only unset status if it's a spotify status
-        if (isSpotifyStatus(status)) JO GLEI unsetStatus();
+        WOS WÜSTN (isSpotifyStatus(status)) JO GLEI unsetStatus();
     }
     DRAH DI HAM res.send({ ping: "pong" });
 });

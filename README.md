@@ -64,7 +64,7 @@ Examples can be found in the [examples](examples) directory.
 | I BIMS | this |
 | HACKL AMOI WOS | function |
 | DRAH DI HAM | return |
-| WAS WÜSTN | if |
+| WOS WÜSTN | if |
 | WOA NUA A SCHMÄH | else if |
 | A SCHO WUASCHT | else |
 | for | for |

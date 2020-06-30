@@ -35,12 +35,6 @@ WienerScript requires [Node.js and npm](https://nodejs.org/en/).
 npm install -g wienerscript
 ```
 
-or
-
-```
-yarn add global wienerscript
-```
-
 Usage:
 
 ```
@@ -133,4 +127,4 @@ Examples can be found in the [examples](examples) directory.
 This project is licensed under the MIT license, Copyright (c) 2020 David Pichsenmeister | [pichsenmeister.com](https://pichsenmeister.com). For more information see [LICENSE](LICENSE).
 
 
-Made by [@pichsenmeister](https://twitter.com/pichsenmeister). Inspired by [ArnoldJS](https://github.com/pichsenmeister/ArnoldJS). 
+Made by [@pichsenmeister](https://twitter.com/pichsenmeister). Inspired by [ArnoldJS](https://github.com/theBrianCui/ArnoldJS). 

@@ -55,6 +55,8 @@ Examples can be found in the [examples](examples) directory.
 
 ### Usage
 
+#### Keywords 
+
 | WienerScript | JavaScript |
 | ----- | ----- |
 | FIX OIDA | const |
@@ -63,47 +65,69 @@ Examples can be found in the [examples](examples) directory.
 | HAWIDERE | new |
 | I BIMS | this |
 | HACKL AMOI WOS | function |
-| DRAH DI HAM | return |
-| WOS WÜSTN | if |
-| WOA NUA A SCHMÄH | else if |
-| A SCHO WUASCHT | else |
-| for | for |
+| SCHLEICH DI | delete |
+| SICHA NET | false |
+| NA NO NA NET | true |
+| WOS BISTN DU FIA A WAPPLA | instanceof |
+| WEM GHERSTN DU | typeof |
+| JO GLEI | await |
+| OWIZAHRA | async |
+| AIZAL | in |
+
+#### Control statements
+
+| WienerScript | JavaScript |
+| ----- | ----- |
+| STRAWANZ MA | for |
 | DAMMA WOS | do |
 | GEMMA | while |
 | GUSCH | continue |
-| in | in |
+| WAS WÜSTN | if |
+| WOA NUA A SCHMÄH | else if |
+| A SCHO WUASCHT | else |
 | WOS IS MIT DIR | switch |
 | I SCHAU NUR | case |
 | PASST SCHO | break |
 | NA GEH | default |
+| DRAH DI HAM | return |
 | GEH SCHEISSN | throw |
 | SCHAU MA MOL | try |
 | LECK OASCH | catch |
 | SAMMAS ENDLICH | finally |
-| SCHLEICH DI | delete |
-| SICHA NET | false |
-| NA NO NA NET | true |
-| instanceOf | instanceof |
-| typeof | typeof |
-| JO GLEI | await |
-| OWIZAHRER | async |
-| I MAN JA NUR | console.log |
-| DO IS DA HUND BEGROBN | console.debug |
-| GSCHISSN GRISSN | console.error |
-| DES IS MA ECHT Z'DEPPAT | process.exit |
+
+#### Operators
+
+| WienerScript | JavaScript |
+| ----- | ----- |
 | KANNST DA VUASTÖHN | === |
 | DES GEHT SI SCHO AUS | == |
-| && | && |
+| UND ÜBRIGENS | && |
 | GHUPFT WIE GHATSCHT | \|\| |
 | WENNST MANST | = |
+| ANS AUFI | ++ |
 | AUFI | + |
+| ANS OWI | -- |
 | OWI | - |
 | HAUTS EICH ZAM | * |
 | BRÖCKERL | / |
 | S'RESTL | % |
+| WENGA | < |
+| GRESSA | > |
+| HOIT NET GRESSA | <= |
+| HOIT NET KLANA | >= |
 | JO EH | ! |
 | HOST MI | ? |
 | DANN HOIT NET | : |
+| HUACH ZUA | => |
+
+#### Functions
+
+| WienerScript | JavaScript |
+| ----- | ----- |
+| I MAN JA NUR | console.log |
+| DO IS DA HUND BEGROBN | console.debug |
+| GSCHISSN GRISSN | console.error |
+| DES IS MA ECHT Z'DEPPAT | process.exit |
 
 ## License
 This project is licensed under the MIT license, Copyright (c) 2020 David Pichsenmeister | pichsenmeister.com. For more information see [LICENSE](LICENSE).

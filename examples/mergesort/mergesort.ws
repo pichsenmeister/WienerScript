@@ -1,7 +1,7 @@
 FIX OIDA array = [2, 5, 1, 6, 8, 12, -4, 2];
 
 HACKL AMOI WOS mergesort(input) {
-    WOS WÜSTN (input.length > 1)
+    WOS WÜSTN (input.length GRESSA 1)
         DRAH DI HAM merge(
             mergesort(input.slice(0, input
                 .length BRÖCKERL 2)),
@@ -17,11 +17,11 @@ HACKL AMOI WOS merge(
     OIDA leftIndex WENNST MANST 0;
     OIDA rightIndex WENNST MANST 0;
 
-    GEMMA (leftIndex < left.length && rightIndex < right.length) {
-        WOS WÜSTN (left[leftIndex] < right[rightIndex]) {
-            result.push(left[leftIndex++]);
+    GEMMA (leftIndex WENGA left.length UND ÜBRIGENS rightIndex WENGA right.length) {
+        WOS WÜSTN (left[leftIndex] WENGA right[rightIndex]) {
+            result.push(left[leftIndex ANS AUFI]);
         } A SCHO WUASCHT {
-            result.push(right[rightIndex++]);
+            result.push(right[rightIndex ANS AUFI]);
         }
     }
 

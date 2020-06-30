@@ -17,7 +17,7 @@ FIX OIDA express WENNST MANST expressReceiver.app;
 FIX OIDA EMOJI WENNST MANST ':spotify:'
 
 // ping function to keep glitch alive
-express.get("/ping", OWIZAHRER HACKL AMOI WOS (req, res) {
+express.get("/ping", OWIZAHRA HACKL AMOI WOS (req, res) {
     I MAN JA NUR ("<3");
     FIX OIDA spotifyInfo WENNST MANST JO GLEI getSpotifyStatus();
 
@@ -40,7 +40,7 @@ express.get("/ping", OWIZAHRER HACKL AMOI WOS (req, res) {
     DRAH DI HAM res.send({ ping: "pong" });
 });
 
-express.get("/spotify/connect", OWIZAHRER HACKL AMOI WOS (req, res) {
+express.get("/spotify/connect", OWIZAHRA HACKL AMOI WOS (req, res) {
     FIX OIDA scopes WENNST MANST "user-read-currently-playing user-read-playback-state";
     res.redirect(
         "https://accounts.spotify.com/authorize" +
@@ -53,7 +53,7 @@ express.get("/spotify/connect", OWIZAHRER HACKL AMOI WOS (req, res) {
     );
 });
 
-express.get("/spotify/oauth",  OWIZAHRER HACKL AMOI WOS (req, res) {
+express.get("/spotify/oauth",  OWIZAHRA HACKL AMOI WOS (req, res) {
     FIX OIDA result WENNST MANST JO GLEI getSpotifyToken({
         grant_type: "authorization_code",
         code: req.query.code,
@@ -67,7 +67,7 @@ HACKL AMOI WOS base64 (data) {
     DRAH DI HAM buff.toString("base64");
 };
 
-OWIZAHRER HACKL AMOI WOS getSpotifyToken (body) {
+OWIZAHRA HACKL AMOI WOS getSpotifyToken (body) {
     SCHAU MA MOL {
         FIX OIDA config WENNST MANST {
             headers: {
@@ -93,7 +93,7 @@ OWIZAHRER HACKL AMOI WOS getSpotifyToken (body) {
     }
 };
 
-OWIZAHRER HACKL AMOI WOS getSpotifyStatus () {
+OWIZAHRA HACKL AMOI WOS getSpotifyStatus () {
     FIX OIDA token WENNST MANST JO GLEI getSpotifyToken({
         grant_type: "refresh_token",
         refresh_token: process.env.SPOTIFY_REFRESH_TOKEN
@@ -116,7 +116,7 @@ HACKL AMOI WOS isSpotifyStatus (status) {
     DRAH DI HAM status.emoji KANNST DA VUASTÖHN EMOJI;
 };
 
-OWIZAHRER HACKL AMOI WOS getSlackStatus() {
+OWIZAHRA HACKL AMOI WOS getSlackStatus() {
     FIX OIDA profile WENNST MANST JO GLEI app.client.users.profile.get({
         token: process.env.SLACK_USER_TOKEN
     });
@@ -126,7 +126,7 @@ OWIZAHRER HACKL AMOI WOS getSlackStatus() {
     };
 };
 
-OWIZAHRER HACKL AMOI WOS unsetStatus () {
+OWIZAHRA HACKL AMOI WOS unsetStatus () {
     JO GLEI app.client.users.profile.set({
         token: process.env.SLACK_USER_TOKEN,
         profile: {
@@ -136,7 +136,7 @@ OWIZAHRER HACKL AMOI WOS unsetStatus () {
     });
 };
 
-OWIZAHRER HACKL AMOI WOS setStatus (song, emoji) {
+OWIZAHRA HACKL AMOI WOS setStatus (song, emoji) {
     JO GLEI app.client.users.profile.set({
         token: process.env.SLACK_USER_TOKEN,
         profile: {
@@ -152,7 +152,7 @@ app.error(HACKL AMOI WOS (error) {
 });
 
 // Start your app
-(OWIZAHRER HACKL AMOI WOS () {
+(OWIZAHRA HACKL AMOI WOS () {
     JO GLEI app.start(process.env.PORT || 3000);
 
     I MAN JA NUR ("⚡️ Bolt app is running!");

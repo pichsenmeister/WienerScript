@@ -76,7 +76,7 @@ Examples can be found in the [examples](examples) directory.
 | DAMMA WOS | do |
 | GEMMA | while |
 | GUSCH | continue |
-| WAS WÜSTN | if |
+| WOS WÜSTN | if |
 | WOA NUA A SCHMÄH | else if |
 | A SCHO WUASCHT | else |
 | WOS IS MIT DIR | switch |

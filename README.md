@@ -122,6 +122,7 @@ Examples can be found in the [examples](examples) directory.
 | DO IS DA HUND BEGROBN | console.debug |
 | GSCHISSN GRISSN | console.error |
 | DES IS MA ECHT Z'DEPPAT | process.exit |
+| HEAST | alert |
 
 ## License
 This project is licensed under the MIT license, Copyright (c) 2020 David Pichsenmeister | [pichsenmeister.com](https://pichsenmeister.com). For more information see [LICENSE](LICENSE).

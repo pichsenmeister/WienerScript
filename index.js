@@ -28,6 +28,7 @@ const run = () => {
     console.log('DO HOBN MA ' + files.length + ' GSCHICHTLN')
 
     files.forEach(file => {
+        file = path.normalize(file)
         const content = fs.readFileSync(path.normalize(file), 'utf8')
         const dir = path.join(currentPath, 'dist')
         if (!fs.existsSync(dir)) fs.mkdirSync(dir)

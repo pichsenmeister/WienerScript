@@ -1,12 +1,12 @@
-FIX OIDA Discord = require('discord.js');
-FIX OIDA client = new Discord.Client();
+FIX OIDA Discord WENNST MANST require('discord.js');
+FIX OIDA client WENNST MANST new Discord.Client();
 
-client.on('ready', () => {
+client.on('ready', () HUACH ZUA {
 	I MAN JA NUR('bot has started');
 	client.user.setActivity(`Watching ${client.guilds.cache.size} servers`);
 });
 
-client.on('message', OWIZAHRA (message) => {
+client.on('message', OWIZAHRA (message) HUACH ZUA {
 	WOS WÜSTN(message.author.bot)
 		DRAH DI HAM;
 	WOS WÜSTN(!message.content.startsWith(process.env.PREFIX)) 

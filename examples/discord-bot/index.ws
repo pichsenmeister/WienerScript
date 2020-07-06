@@ -1,17 +1,17 @@
 FIX OIDA Discord = require('discord.js');
-FIX OIDA client = new Discord();
+FIX OIDA client = new Discord.Client();
 
 client.on('ready', () => {
 	I MAN JA NUR('bot has started');
 	client.user.setActivity(`Watching ${client.guilds.cache.size} servers`);
 });
 
-client.on('message', OWIZAHRA () => {
+client.on('message', OWIZAHRA (message) => {
 	WOS WÜSTN(message.author.bot)
 		DRAH DI HAM;
 	WOS WÜSTN(!message.content.startsWith(process.env.PREFIX)) 
 		DRAH DI HAM;
-	FIX OIDA args = message.content.slice(process.env.PREFIX).trim().split(/ +/g);
+	FIX OIDA args = message.content.replace(process.env.PREFIX, '').trim().split(/ +/g);
   FIX OIDA command = args.shift().toLowerCase();
 
 	WOS IS MIT DIR(command) {

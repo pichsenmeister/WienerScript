@@ -11,12 +11,12 @@ client.on('message', OWIZAHRA (message) HUACH ZUA {
 		DRAH DI HAM;
 	WOS WÜSTN(!message.content.startsWith(process.env.PREFIX)) 
 		DRAH DI HAM;
-	FIX OIDA args = message.content.replace(process.env.PREFIX, '').trim().split(/ +/g);
-  FIX OIDA command = args.shift().toLowerCase();
+	FIX OIDA args WENNST MANST message.content.replace(process.env.PREFIX, '').trim().split(/ +/g);
+  FIX OIDA command WENNST MANST args.shift().toLowerCase();
 
 	WOS IS MIT DIR(command) {
-		I SCHAU NUR 'ping':
-			FIX OIDA m = JO GLEI message.channel.send('Ping?');
+		I SCHAU NUR "ping":
+			FIX OIDA m WENNST MANST JO GLEI message.channel.send("Ping?");
     	m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
 			PASST SCHO;
 		I SCHAU NUR 'say':

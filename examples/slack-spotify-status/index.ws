@@ -1,14 +1,14 @@
-require("dotenv").config();
-FIX OIDA { App, ExpressReceiver } WENNST MANST require("@slack/bolt");
-FIX OIDA axios WENNST MANST require("axios");
-FIX OIDA qs WENNST MANST require("querystring");
+require('dotenv').config();
+FIX OIDA { App, ExpressReceiver } WENNST MANST require('@slack/bolt');
+FIX OIDA axios WENNST MANST require('axios');
+FIX OIDA qs WENNST MANST require('querystring');
 
 FIX OIDA expressReceiver WENNST MANST HAWIDERE ExpressReceiver({});
 FIX OIDA app WENNST MANST HAWIDERE App({
     signingSecret: process.env.SLACK_SIGNING_SECRET,
     token: process.env.SLACK_USER_TOKEN,
     receiver: expressReceiver,
-    logLevel: "DEBUG"
+    logLevel: 'DEBUG'
 });
 
 FIX OIDA express WENNST MANST expressReceiver.app;
@@ -17,8 +17,8 @@ FIX OIDA express WENNST MANST expressReceiver.app;
 FIX OIDA EMOJI WENNST MANST ':spotify:'
 
 // ping function to keep glitch alive
-express.get("/ping", OWIZAHRA HACKL AMOI WOS (req, res) {
-    I MAN JA NUR ("<3");
+express.get('/ping', OWIZAHRA HACKL AMOI WOS (req, res) {
+    I MAN JA NUR ('<3');
     FIX OIDA spotifyInfo WENNST MANST JO GLEI getSpotifyStatus();
 
     WOS WÜSTN (spotifyInfo.is_playing) {
@@ -26,7 +26,7 @@ express.get("/ping", OWIZAHRA HACKL AMOI WOS (req, res) {
             name: spotifyInfo.item.name,
             artists: spotifyInfo.item.artists
                 .map(artist HUACH ZUA artist.name)
-                .join(" & ")
+                .join(' & ')
         };
 
         JO GLEI setStatus(song, EMOJI);
@@ -37,25 +37,25 @@ express.get("/ping", OWIZAHRA HACKL AMOI WOS (req, res) {
         // only unset status if it's a spotify status
         WOS WÜSTN (isSpotifyStatus(status)) JO GLEI unsetStatus();
     }
-    DRAH DI HAM res.send({ ping: "pong" });
+    DRAH DI HAM res.send({ ping: 'pong' });
 });
 
-express.get("/spotify/connect", OWIZAHRA HACKL AMOI WOS (req, res) {
-    FIX OIDA scopes WENNST MANST "user-read-currently-playing user-read-playback-state";
+express.get('/spotify/connect', OWIZAHRA HACKL AMOI WOS (req, res) {
+    FIX OIDA scopes WENNST MANST 'user-read-currently-playing user-read-playback-state';
     res.redirect(
-        "https://accounts.spotify.com/authorize" +
-        "?response_type=code" +
-        "&client_id=" +
+        'https://accounts.spotify.com/authorize' +
+        '?response_type=code' +
+        '&client_id=' +
         process.env.SPOTIFY_CLIENT_ID +
-        (scopes ? "&scope=" + encodeURIComponent(scopes) : "") +
-        "&redirect_uri+" +
+        (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
+        '&redirect_uri+' +
         encodeURIComponent(process.env.SPOTIFY_REDIRECT_URL)
     );
 });
 
-express.get("/spotify/oauth",  OWIZAHRA HACKL AMOI WOS (req, res) {
+express.get('/spotify/oauth',  OWIZAHRA HACKL AMOI WOS (req, res) {
     FIX OIDA result WENNST MANST JO GLEI getSpotifyToken({
-        grant_type: "authorization_code",
+        grant_type: 'authorization_code',
         code: req.query.code,
         redirect_uri: process.env.SPOTIFY_REDIRECT_URL
     });
@@ -64,19 +64,19 @@ express.get("/spotify/oauth",  OWIZAHRA HACKL AMOI WOS (req, res) {
 
 HACKL AMOI WOS base64 (data) {
     FIX OIDA buff WENNST MANST new Buffer(data);
-    DRAH DI HAM buff.toString("base64");
+    DRAH DI HAM buff.toString('base64');
 };
 
 OWIZAHRA HACKL AMOI WOS getSpotifyToken (body) {
     SCHAU MA MOL {
         FIX OIDA config WENNST MANST {
             headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
+                'Content-Type': 'application/x-www-form-urlencoded',
                 Authorization:
-                    "Basic " +
+                    'Basic ' +
                     base64(
                         process.env.SPOTIFY_CLIENT_ID +
-                        ":" +
+                        ':' +
                         process.env.SPOTIFY_CLIENT_SECRET
                     )
             }
@@ -95,13 +95,13 @@ OWIZAHRA HACKL AMOI WOS getSpotifyToken (body) {
 
 OWIZAHRA HACKL AMOI WOS getSpotifyStatus () {
     FIX OIDA token WENNST MANST JO GLEI getSpotifyToken({
-        grant_type: "refresh_token",
+        grant_type: 'refresh_token',
         refresh_token: process.env.SPOTIFY_REFRESH_TOKEN
     });
 
     FIX OIDA config WENNST MANST {
         headers: {
-            Authorization: "Bearer " + token.access_token
+            Authorization: 'Bearer ' + token.access_token
         }
     };
     FIX OIDA result WENNST MANST JO GLEI axios.get(
@@ -130,8 +130,8 @@ OWIZAHRA HACKL AMOI WOS unsetStatus () {
     JO GLEI app.client.users.profile.set({
         token: process.env.SLACK_USER_TOKEN,
         profile: {
-            status_text: "",
-            status_emoji: ""
+            status_text: '',
+            status_emoji: ''
         }
     });
 };
@@ -155,5 +155,5 @@ app.error(HACKL AMOI WOS (error) {
 (OWIZAHRA HACKL AMOI WOS () {
     JO GLEI app.start(process.env.PORT || 3000);
 
-    I MAN JA NUR ("⚡️ Bolt app is running!");
+    I MAN JA NUR ('⚡️ Bolt app is running!');
 })();

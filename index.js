@@ -5,13 +5,15 @@ const glob = require('glob'),
   prettier = require('prettier'),
   keywords = JSON.parse(fs.readFileSync('./keywords.json'));
 
-const getFiles = () => glob.sync(process.cwd() + '/**/*.ws', { ignore: 'node_modules/'});
+const getFiles = async () => new Promise((resolve, reject) => 
+  glob(process.cwd() + '/**/*.ws', { ignore: process.cwd() + '/node_modules/**'}, (err, matches) => err && reject(err) || matches && resolve(matches)));
 
 const getContent = (path) => new Promise((resolve, reject) => 
   fs.readFile(path, (err, data) => err && reject(err) || data && resolve(data)));
 
 const transform = async (file) => ({ 
   path: path.join(process.cwd(), 'dist', file.replace(process.cwd(), '').replace(/\.ws$/, '.js')), 
+  file: file.replace(process.cwd(), ''),
   content: String(await getContent(file)) 
 });
 
@@ -26,14 +28,14 @@ const transpile = (file) => {
 const saveFile = (file) => new Promise((resolve, reject) => {
   fs.mkdir(file.path.substring(0, file.path.lastIndexOf(path.sep)), { recursive: true }, (err) => {
     if (err) return reject(err);
-    console.info(`[WienerScript] DRAH DI DEPPATA ${file.path.replace(process.cwd(), '').replace('/dist', '')} ==> ${file.path.replace(process.cwd(), '')}`);
+    console.info(`[WienerScript] DRAH DI DEPPATA ${file.file} ==> ${file.path.replace(process.cwd(), '')}`);
     fs.writeFile(file.path, prettier.format(file.content, { parser: 'babel' }), (err, data) => err && reject(err) || data && resolve(data));
   });
 });
 
 (async () => {
   try {
-    const files = getFiles().map(path.normalize);
+    const files = (await getFiles()).map(path.normalize);
     console.info(`[WienerScript] HAWIDERE! DO HOBN MA ${files.length} GSCHICHTLN!`);
     (await Promise.all(files.map(transform))).map(transpile).map(saveFile);
   } catch(err) {

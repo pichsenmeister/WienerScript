@@ -1,47 +1,45 @@
 #!/usr/bin/env node
+const glob = require('glob'),
+  fs = require('fs'),
+  path = require('path'),
+  prettier = require('prettier'),
+  keywords = JSON.parse(fs.readFileSync('./keywords.json'));
 
-const glob = require('glob')
-const fs = require('fs')
-const path = require('path')
-const mkdirp = require('mkdirp')
-const prettier = require('prettier')
+const getFiles = async () => new Promise((resolve, reject) => 
+  glob(process.cwd() + '/**/*.ws', { ignore: process.cwd() + '/node_modules/**'}, (err, matches) => err && reject(err) || matches && resolve(matches)));
 
-// options is optional
-const getFiles = (currentPath) => {
-    const files = glob.sync(currentPath + "/**/*.ws")
-    return files.filter(file => file.indexOf('node_modules/') < 0)
-}
+const getContent = (path) => new Promise((resolve, reject) => 
+  fs.readFile(path, (err, data) => err && reject(err) || data && resolve(data)));
 
-const compile = (content) => {
-    const keywords = JSON.parse(fs.readFileSync(path.join(__dirname, 'keywords.json'), 'utf8'))
-    for (const key in keywords) {
-        content = content.replace(new RegExp(key, "g"), keywords[key]);
-    }
-    return content
-}
+const transform = async (file) => ({ 
+  path: path.join(process.cwd(), 'dist', file.replace(process.cwd(), '').replace(/\.ws$/, '.js')), 
+  file: file.replace(process.cwd(), ''),
+  content: String(await getContent(file)) 
+});
 
-const run = () => {
-    console.log('HAWIDERE')
-    const currentPath = process.cwd()
-    const files = getFiles(currentPath)
+const transpile = (file) => {
+	Object.entries(keywords).map(([key, value]) => (file = { 
+    ...file, 
+    content: file.content.replace(new RegExp(key, 'g'), value) 
+  }));
+	return file;
+};
 
-    console.log('DO HOBN MA ' + files.length + ' GSCHICHTLN')
+const saveFile = (file) => new Promise((resolve, reject) => {
+  fs.mkdir(file.path.substring(0, file.path.lastIndexOf(path.sep)), { recursive: true }, (err) => {
+    if (err) return reject(err);
+    console.info(`[WienerScript] DRAH DI DEPPATA ${file.file} ==> ${file.path.replace(process.cwd(), '')}`);
+    fs.writeFile(file.path, prettier.format(file.content, { parser: 'babel' }), (err, data) => err && reject(err) || data && resolve(data));
+  });
+});
 
-    files.forEach(file => {
-        file = path.normalize(file)
-        const content = fs.readFileSync(path.normalize(file), 'utf8')
-        const dir = path.join(currentPath, 'dist')
-        if (!fs.existsSync(dir)) fs.mkdirSync(dir)
-
-        const dirs = file.substring(0, file.lastIndexOf(path.sep)).replace(currentPath, '')
-        mkdirp.sync(path.join(currentPath, 'dist', dirs))
-
-        const filePath = path.join(currentPath, 'dist', file.replace(currentPath, '').replace('.ws', '.js'))
-        console.log('DRAH DI DEPATTA', file.replace(currentPath, '').replace(path.sep, '') + ' ==> ' + filePath.replace(currentPath, '').replace(path.sep, ''))
-        fs.writeFileSync(filePath, prettier.format(compile(content), { parser: 'babel' }), (error) => console.error(error))
-    })
-
-    console.log('PFIATI')
-}
-
-run()
+(async () => {
+  try {
+    const files = (await getFiles()).map(path.normalize);
+    console.info(`[WienerScript] HAWIDERE! DO HOBN MA ${files.length} GSCHICHTLN!`);
+    (await Promise.all(files.map(transform))).map(transpile).map(saveFile);
+  } catch(err) {
+    console.error('[WienerScript] DO IS WOS SCHIEF GRENNT:');
+    throw err;
+  }
+})();

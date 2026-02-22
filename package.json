@@ -18,7 +18,7 @@
 	"homepage": "https://github.com/pichsenmeister/wienerscript",
 	"license": "MIT",
 	"dependencies": {
-		"glob": "^7.1.6",
+		"glob": "^13.0.6",
 		"prettier": "^2.0.5"
 	}
 }
